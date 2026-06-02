@@ -14,7 +14,7 @@ export DOWNSAMPLE_MODE="${DOWNSAMPLE_MODE:-4x}"
 
 
 SWIFT_BIN="${SWIFT_BIN:-swift}"
-MODEL_PATH="${MODEL_PATH:-/mnt/workspace/.cache/modelscope/models/OpenBMB/MiniCPM-V-4_6}"
+MODEL_PATH="${MODEL_PATH:-/mnt/workspace/.cache/modelscope/models/OpenBMB/MiniCPM-V-4.6}"
 
 TRAIN_DATA="${TRAIN_DATA:-/mnt/workspace/pixcount/pixmo_train_imgs}"
 VALID_DATA="${VALID_DATA:-/mnt/workspace/pixcount/pixmo_val_imgs/pixmo_count_val.parquet}"
@@ -53,4 +53,4 @@ ${SWIFT_BIN} sft \
   --enable_channel_loss True \
   --attn_impl flash_attn \
   --output_dir "${OUTPUT_DIR}"
-#  --report_to wandb
+  --report_to none
