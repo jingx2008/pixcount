@@ -2,7 +2,7 @@
 set -euo pipefail
 
 export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
-export NPROC_PER_NODE="${NPROC_PER_NODE:-8}"
+export NPROC_PER_NODE="${NPROC_PER_NODE:-1}"
 export MASTER_PORT="${MASTER_PORT:-29632}"
 
 export WANDB_API_KEY="${WANDB_API_KEY:-}"
