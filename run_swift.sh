@@ -1,26 +1,26 @@
 #!/bin/bash
 set -euo pipefail
 
-export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0,1,2,3,4,5,6,7}"
+export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 export NPROC_PER_NODE="${NPROC_PER_NODE:-8}"
 export MASTER_PORT="${MASTER_PORT:-29632}"
 
-export WANDB_API_KEY="${WANDB_API_KEY:-}"
-export WANDB_PROJECT="${WANDB_PROJECT:-MiniCPMV46-Counting}"
-export WANDB_RUN_NAME="${WANDB_RUN_NAME:-mcpmv46_count}"
-export WANDB_NAME="${WANDB_NAME:-mcpmv46_count}"
+#export WANDB_API_KEY="${WANDB_API_KEY:-}"
+#export WANDB_PROJECT="${WANDB_PROJECT:-MiniCPMV46-Counting}"
+#export WANDB_RUN_NAME="${WANDB_RUN_NAME:-mcpmv46_count}"
+#export WANDB_NAME="${WANDB_NAME:-mcpmv46_count}"
 
 export DOWNSAMPLE_MODE="${DOWNSAMPLE_MODE:-4x}"
 
 SWIFT_BIN="${SWIFT_BIN:-swift}"
-MODEL_PATH="${MODEL_PATH:-/path/to/minicpm-v-4_6}"
+MODEL_PATH="${MODEL_PATH:-/mnt/workspace/.cache/modelscope/models/OpenBMB/MiniCPM-V-4_6}"
 
 TRAIN_DATA="${TRAIN_DATA:-/mnt/workspace/pixcount/pixmo_train_imgs}"
 VALID_DATA="${VALID_DATA:-/mnt/workspace/pixcount/pixmo_val_imgs/pixmo_count_val.parquet}"
 
 DEEPSPEED_CONFIG="${DEEPSPEED_CONFIG:-zero2}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUTPUT_DIR="${OUTPUT_DIR:-path/to/outdir}"
+OUTPUT_DIR="${OUTPUT_DIR:-/mnt/workspace/minicpm-v-4_6-custom}"
 
 ${SWIFT_BIN} sft \
   --model "${MODEL_PATH}" \
@@ -51,5 +51,5 @@ ${SWIFT_BIN} sft \
   --dataloader_num_workers 16 \
   --enable_channel_loss True \
   --attn_impl flash_attn \
-  --output_dir "${OUTPUT_DIR}" \
-  --report_to wandb
+  --output_dir "${OUTPUT_DIR}"
+#  --report_to wandb
