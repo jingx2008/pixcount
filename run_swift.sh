@@ -5,10 +5,10 @@ export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 export NPROC_PER_NODE="${NPROC_PER_NODE:-8}"
 export MASTER_PORT="${MASTER_PORT:-29632}"
 
-#export WANDB_API_KEY="${WANDB_API_KEY:-}"
-#export WANDB_PROJECT="${WANDB_PROJECT:-MiniCPMV46-Counting}"
-#export WANDB_RUN_NAME="${WANDB_RUN_NAME:-mcpmv46_count}"
-#export WANDB_NAME="${WANDB_NAME:-mcpmv46_count}"
+export WANDB_API_KEY="${WANDB_API_KEY:-}"
+export WANDB_PROJECT="${WANDB_PROJECT:-MiniCPMV46-Counting}"
+export WANDB_RUN_NAME="${WANDB_RUN_NAME:-mcpmv46_count}"
+export WANDB_NAME="${WANDB_NAME:-mcpmv46_count}"
 
 export DOWNSAMPLE_MODE="${DOWNSAMPLE_MODE:-4x}"
 
