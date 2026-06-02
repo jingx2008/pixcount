@@ -15,8 +15,8 @@ export DOWNSAMPLE_MODE="${DOWNSAMPLE_MODE:-4x}"
 SWIFT_BIN="${SWIFT_BIN:-swift}"
 MODEL_PATH="${MODEL_PATH:-/path/to/minicpm-v-4_6}"
 
-TRAIN_DATA="${TRAIN_DATA:-/path/to/task_dataset/train/pixmo_count_train_with_channel}"
-VALID_DATA="${VALID_DATA:-/path/to/task_dataset/val/validation-00000-of-00001-swift.parquet}"
+TRAIN_DATA="${TRAIN_DATA:-/mnt/workspace/pixcount/pixmo_train_imgs}"
+VALID_DATA="${VALID_DATA:-/mnt/workspace/pixcount/pixmo_val_imgs/pixmo_count_val.parquet}"
 
 DEEPSPEED_CONFIG="${DEEPSPEED_CONFIG:-zero2}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
