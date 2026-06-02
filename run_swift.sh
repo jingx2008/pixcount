@@ -32,7 +32,7 @@ ${SWIFT_BIN} sft \
   --dataset "${TRAIN_DATA}" \
   --val_dataset "${VALID_DATA}" \
   --deepspeed "${DEEPSPEED_CONFIG}" \
-  --tuner_type full \
+  --tuner_type lora \
   --torch_dtype bfloat16 \
   --freeze_vit False \
   --packing false \
@@ -48,9 +48,9 @@ ${SWIFT_BIN} sft \
   --eval_steps 80 \
   --save_total_limit 30 \
   --load_from_cache_file false \
-  --dataset_num_proc 16 \
-  --dataloader_num_workers 16 \
+  --dataset_num_proc 4 \
+  --dataloader_num_workers 4 \
   --enable_channel_loss True \
-  --attn_impl flash_attn \
+  --attn_impl eager \
   --output_dir "${OUTPUT_DIR}"
   --report_to none
