@@ -12,6 +12,7 @@ export WANDB_NAME="${WANDB_NAME:-mcpmv46_count}"
 
 export DOWNSAMPLE_MODE="${DOWNSAMPLE_MODE:-4x}"
 
+
 SWIFT_BIN="${SWIFT_BIN:-swift}"
 MODEL_PATH="${MODEL_PATH:-/mnt/workspace/.cache/modelscope/models/OpenBMB/MiniCPM-V-4_6}"
 
